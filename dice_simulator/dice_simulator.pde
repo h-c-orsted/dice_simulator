@@ -1,8 +1,18 @@
+/* 
+  Call void rollDice(int) to do a roll. 
+  Arguments: int which is the count of rolls
+*/
+
+
 // Create array to hold the values
 int[] results = new int[6];
 
 
 void rollDice(int count) {
+  float factor = 700 / (count/6*1.5);
+  println("factor: " + factor);
+  
+  
   // Reset array and clear canvas
   results = new int[6];
   clear();
@@ -19,8 +29,8 @@ void rollDice(int count) {
   
   // Create the graph showing the results
   for (int j=0; j < 6; j++) {
-    text(results[j], 90+100*j, 690-results[j]);
-    rect(50+100*j, 700-results[j], 100, results[j]);
+    text(results[j], 90+100*j, 690-(results[j] * factor));
+    rect(50+100*j, 700-(results[j] * factor), 100, results[j]*factor);
   }
 }
 
@@ -36,5 +46,5 @@ void draw() {}
 
 // Do 1000 dice rolls when mouse is clicked
 void mousePressed() {
-  rollDice(900);
+  rollDice(10000);
 }
