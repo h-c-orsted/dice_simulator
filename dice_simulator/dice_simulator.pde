@@ -1,6 +1,6 @@
 /* 
   Call void rollDice(int) to do a roll. 
-  Arguments: int which is the count of rolls
+  Arguments: (int) is the count of rolls
 */
 
 
